@@ -3,7 +3,7 @@ package com.example.demo.model;
 import lombok.Data;
 
 @Data
-public class StudentDTO {
-  private int studentId;
-  private float point;
+public class StudentDto {
+    private int studentId;
+    private float point;
 }

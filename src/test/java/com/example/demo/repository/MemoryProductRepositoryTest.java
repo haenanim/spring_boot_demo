@@ -10,8 +10,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MemoryProductRepositoryTest {
-
-  ProductRepository productRepository = new MemoryProductRepository();
+  ProductRepository productRepository = new MemoryProductRespository();
 
   @BeforeEach
   void setUp() {
@@ -40,14 +39,14 @@ class MemoryProductRepositoryTest {
   @Test
   void productUpdate() {
     Product product = Product.builder().productId(1).productName("제품명2").maker("오리").price(2000).qty(50).build();
-    productRepository.productUpdate(product.getProductId(), product);
+    productRepository.update(product.getProductId(), product);
     Product product1 = productRepository.findById(1);
     Assertions.assertThat(product1.getProductName()).isEqualTo("제품명2");
   }
 
   @Test
   void deleteProduct() {
-    Product product = productRepository.deleteProduct(1);
+    Product product = productRepository.delete(1);
     Assertions.assertThat(product.getProductName()).isEqualTo("제품명1");
 
   }

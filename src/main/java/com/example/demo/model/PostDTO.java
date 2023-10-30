@@ -3,7 +3,7 @@ package com.example.demo.model;
 import lombok.Data;
 
 @Data
-public class PostDTO {
-  private int postid;
-  private int likes;
+public class PostDto {
+    private int postid;
+    private int likes;
 }
