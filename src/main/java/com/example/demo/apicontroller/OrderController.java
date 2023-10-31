@@ -18,8 +18,6 @@ public class OrderController {
                            OrderService orderService) {
         this.productServie = productServie;
         this.orderService = orderService;
-        //AppConfig appConfig = new AppConfig();
-        //orderService = appConfig.orderService();
     }
 
     @GetMapping("/{productId}")
