@@ -1,9 +1,7 @@
 package com.example.demo.viewController;
 
-import com.example.demo.model.Post;
 import com.example.demo.model.Product;
 import com.example.demo.model.Student;
-import com.example.demo.service.PostService;
 import com.example.demo.service.ProductServie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,28 +13,18 @@ import java.util.List;
 @Controller
 @RequestMapping("/view")
 public class ViewController {
-    //private final ProductServie productServie;
-    private final PostService postService;
+    private final ProductServie productServie;
 
     @Autowired
-    public ViewController(PostService postService) {
-        this.postService = postService;
+    public ViewController(ProductServie productServie) {
+        this.productServie = productServie;
     }
-    //public ViewController(ProductServie productServie) {
-//        this.productServie = productServie;
-//    }
 
-//    @GetMapping("/products")
-//    public String method0(Model model){
-//        List<Product> allProducts = productServie.getAllProducts();
-//        model.addAttribute("products", allProducts);
-//        return "productList";
-//    }
-    @GetMapping("/posts")
-    public String postList(Model model) {
-        List<Post> allPost = postService.getAllPosts();
-        model.addAttribute("posts", allPost);
-        return "postList";
+    @GetMapping("/products")
+    public String method0(Model model){
+        List<Product> allProducts = productServie.getAllProducts();
+        model.addAttribute("products", allProducts);
+        return "productList";
     }
 
     @GetMapping("/text")

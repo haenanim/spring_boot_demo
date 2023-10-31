@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Repository
+//@Repository
 public class PostRespositoryImpl implements PostRepository{
     private static Map<Integer, Post> posts = new HashMap<>();
     private static int seq = 0;
